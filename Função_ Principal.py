@@ -4,6 +4,9 @@ from mostrar_menu import mostrar_menu
 from Hanoi import Hanoi
 from  fatorial import fatorial
 from Expr import Expr
+from criar_lista import criar_lista
+from Eordenada import Eordenada 
+from busca_binaria import busca_binaria
 def main():
     while True:
         mostrar_menu()
@@ -27,7 +30,26 @@ def main():
         elif escolha == "5":
             resultado = Expr(int(input("\nDigite um número para a base: ")), int(input("\nDigite um número para o expoente: ")))
             print(f'O Resultado  é {resultado}')
+        elif escolha == "6":
+            nova_lista = criar_lista()
+            while True:
+                entrada=(input("Digite um número inteiro: ou q para sair "))
+                if entrada=="q":
+                    break
+                try:
+                    numero=int(entrada)
+                    nova_lista.append(numero)
+                except ValueError:
+                    print("Entrada inválida. Por favor, digite um número inteiro válido.")
 
+            if Eordenada(nova_lista)==True:
+                numero = int(input("Digite o número procurado: "))
+                print("\nElemento encontrado na posição: ", busca_binaria(nova_lista,0,len(nova_lista)-1,numero))
+            else:
+                print ("A lista de estar ordenada")
+            
+            
+            
         elif escolha == "q":
             print("Saindo do programa.")
             break
