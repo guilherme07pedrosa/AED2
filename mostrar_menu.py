@@ -7,5 +7,7 @@ def mostrar_menu():
     print("4. Exemplo de uma árvore de recursão")
     print("5. Cálculo do exponencial")
     print("6. Busca Binária")
+    print("7. MaxMin")
+    print("8. Combinação de dois numeros")
     
     print("q. Sair")

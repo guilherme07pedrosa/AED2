@@ -7,6 +7,7 @@ from Expr import Expr
 from criar_lista import criar_lista
 from Eordenada import Eordenada 
 from busca_binaria import busca_binaria
+from MaxMin import MaxMin
 def main():
     while True:
         mostrar_menu()
@@ -41,15 +42,27 @@ def main():
                     nova_lista.append(numero)
                 except ValueError:
                     print("Entrada inválida. Por favor, digite um número inteiro válido.")
-
             if Eordenada(nova_lista)==True:
                 numero = int(input("Digite o número procurado: "))
                 print("\nElemento encontrado na posição: ", busca_binaria(nova_lista,0,len(nova_lista)-1,numero))
             else:
                 print ("A lista de estar ordenada")
-            
-            
-            
+        elif escolha=="7":
+            nova_lista = criar_lista()
+            while True:
+                entrada =(input("Digite os números a serem comparados: "))
+                if entrada=="q":
+                    break
+                try:
+                    numero=int(entrada)
+                    nova_lista.append(numero)
+                except ValueError:
+                    print()
+            print(MaxMin(0,len(nova_lista)-1,nova_lista))
+        elif escolha == "8":
+            resultado = (int(input("\nDigite o primeiro numero: ")), int(input("\nDigite o segundo numero: ")))
+            print(f'O Resultado  é {resultado}')
+        
         elif escolha == "q":
             print("Saindo do programa.")
             break
