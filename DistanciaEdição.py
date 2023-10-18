@@ -53,7 +53,7 @@ def DistanciaEdicaoTopDown(A,B):            #Dados: Strings A e B, com |A| = n e
         substituicao=1+ DistanciaEdicaoTopDown(A[:n-1], B[:m-1])
         D[n][m] = min(insercao,delecao,substituicao)
 
-    ImprimeMatriz(D)                #Não consegui imprimir a matriz 
+    ImprimeMatriz(D[n][m])
     return D[n][m]                  #retorno
    
 
