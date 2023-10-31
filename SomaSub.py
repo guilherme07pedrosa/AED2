@@ -16,12 +16,12 @@
 #SomaSub (1, 1)
 
 def Soma4quadrados(ns, t):
-    global soma  # Use a variável soma como global para evitar problemas de escopo
+    global soma  
     while t<= n and (soma + C[t]) <= s:
         S[ns] = t
         soma += C[t]
         if soma == s:
-            print(S[:ns+1])  # Imprime apenas os elementos até ns
+            print(S[:ns+1])  
         else:
             Soma4quadrados(ns + 1, t + 1)
         soma -= C[t]
@@ -30,9 +30,9 @@ def Soma4quadrados(ns, t):
 # Entrada de dados
 s = int(input("Digite o número: "))
 n = s
-C = [0] * (n + 1)  # Adicione +1 para incluir o índice 0
+C = [0] * (n + 1)  
 for i in range(1, n + 1):
-    C[i] = i**2
+    C[i] = i
     
 
 soma = 0
